@@ -16,13 +16,13 @@ class safe_manager:
     __password = hashlib.pbkdf2_hmac('sha256', str(input("Please, wait a few seconds after you insert the password\nPlease enter password: ")).encode('ascii'), str(__salt).encode('ascii'), 3799999)
     #6.3sec
 
-    #Reads the password from the user, it hashes the given password and it returns it
+    #Reads the password from the user, it hashes the given password and returns it
     def pass_get(self):
         print("Please, wait a few seconds after you insert the password")
         passholder = hashlib.pbkdf2_hmac('sha256', str(input("Password: ")).encode('ascii'), str(safe_manager.__salt).encode('ascii'), 3799999)
         return passholder
 
-    #It compared the given password with the stored one
+    #It compares the given password with the stored one
     def pass_checker(self):
         if(safe_manager.__password == safe_manager.pass_get(self)):
             print("ACCESS GRANTED")
