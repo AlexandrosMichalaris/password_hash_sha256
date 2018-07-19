@@ -2,10 +2,6 @@ import hashlib #library that contains the sha hash functions
 import string
 import random
 
-#Future-Development-Note: THE PASS WILL ONLY HAVE INT. IF ANYONE TRIES A
-#   COMPARISON WITH A SHA256 HASH THAT CONTAINS LETTERS etc. THE ALARM GOES ON
-
-
 #Generates random string for __salt
 def random_string_generator(size=10, chars=string.ascii_lowercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
